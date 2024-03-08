@@ -1,0 +1,101 @@
+---
+format: revealjs
+self-contained: true
+---
+
+## 
+
+<center>
+![<https://doi.org/10.48550/arXiv.2402.08000>](figures/title-authors-abstract.png)
+</center>
+
+## Summary
+
+- Interested in finding Long Period Variables (LPVs).
+- Built a classifier to sort candidates into:
+    - LPVs,
+    - non-LPVs, and
+    - non-variables.
+- Used upsampling and downsampling to create a balanced training set for use with a gradient-boosted decision tree classifier.
+- Identified 159,696 LPVs from the PGIR survey; 73,346 newly identified.
+- 
+
+## Data
+
+- Palomar Gattini-IR (PGIR) survey
+- September 2018 -- July 2021 ($\approx$ 1400d)
+- Near-Infrared J band
+
+##
+
+<center>![](figures/figure01.png){width="100%"}</center>
+
+## Method
+
+1. Build an initial _bonafide_ training set ($n = 1344$)
+2. Extend training set by taking a subsample of the full survey and classifying these.
+3. Train the gradient-boosted decision tree on the extended training dataset.
+4. Apply classifier to subset of PGIR survey ($N = 35\textrm{M}$).
+5. Compare the labelled result with subset of GAIA DR3 database of LPVs ($N = 150,195$).
+
+## Features
+
+<center>![](figures/table01.png){width="100%"}</center>
+
+## Class Imbalance
+
+- _bonafide_ training set:
+    - 1265 LPVs
+    - 79 non-LPVs
+- ADASYN to upsample minority class
+- allKNN to downsample majority class
+- _extended_ training set:
+    - 2335 LPVs
+    - 444 Type-II LPVs
+    - 166 non-LPVs
+    - 1332 non-variables
+    
+
+
+## Training Set Confusion Matrix
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<center>![](figures/figure06.png){width="100%"}</center>
+
+:::
+
+::: {.column width="40%"}
+
+<center>![](figures/figure07.png){width="100%"}</center>
+
+:::
+
+::::
+
+
+## Variable Importance
+
+<center>![](figures/figure08.png){width="100%"}</center>
+
+## 
+
+<center>![](figures/figure09.png){width="100%"}</center>
+
+## Comparison with GAIA
+
+<center>![](figures/figure14.png){width="100%"}</center>
+
+
+## Comments
+
+- GPs used for interpolation but no details on hyperparameters.
+- Selection bias when choosing what subset of survey to build training set from.
+    - _von Neumann_ score used to choose $\Rightarrow$ important variable.
+- Still have some class imbalance!
+- Why would colour be a good classification feature?
+- Interesting approach of creating new label after looking at results.
+
+
