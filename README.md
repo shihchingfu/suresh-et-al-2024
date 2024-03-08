@@ -1,0 +1,1 @@
+Slides for review of Suresh, Aswin, Viraj Karambelkar, Mansi M. Kasliwal, Michael C. B. Ashley, Kishalay De, Matthew J. Hankins, Anna M. Moore, et al. 2024. “An Automated Catalog of Long Period Variables Using Infrared Lightcurves from Palomar Gattini-IR.” arXiv.Org. February 12, 2024. https://arxiv.org/abs/2402.08000v1.
