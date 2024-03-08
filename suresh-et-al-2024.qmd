@@ -9,16 +9,13 @@ self-contained: true
 ![<https://doi.org/10.48550/arXiv.2402.08000>](figures/title-authors-abstract.png)
 </center>
 
-## Summary
+## Summary 
 
 - Interested in finding Long Period Variables (LPVs).
 - Built a classifier to sort candidates into:
-    - LPVs,
-    - non-LPVs, and
-    - non-variables.
+    - LPVs, non-LPVs, and non-variables.
 - Used upsampling and downsampling to create a balanced training set for use with a gradient-boosted decision tree classifier.
 - Identified 159,696 LPVs from the PGIR survey; 73,346 newly identified.
-- 
 
 ## Data
 
@@ -40,15 +37,13 @@ self-contained: true
 
 ## Features
 
-<center>![](figures/table01.png){width="100%"}</center>
+<center>![](figures/table01.png){width="45%"}</center>
 
 ## Class Imbalance
 
 - _bonafide_ training set:
-    - 1265 LPVs
-    - 79 non-LPVs
-- ADASYN to upsample minority class
-- allKNN to downsample majority class
+    - 1265 LPVs vs. 79 non-LPVs
+- ADASYN to upsample minority class, allKNN to downsample majority class
 - _extended_ training set:
     - 2335 LPVs
     - 444 Type-II LPVs
@@ -61,13 +56,13 @@ self-contained: true
 
 :::: {.columns}
 
-::: {.column width="60%"}
+::: {.column width="50%"}
 
 <center>![](figures/figure06.png){width="100%"}</center>
 
 :::
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 
 <center>![](figures/figure07.png){width="100%"}</center>
 
@@ -86,7 +81,7 @@ self-contained: true
 
 ## Comparison with GAIA
 
-<center>![](figures/figure14.png){width="100%"}</center>
+<center>![](figures/figure14.png){width="50%"}</center>
 
 
 ## Comments
